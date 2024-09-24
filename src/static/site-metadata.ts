@@ -12,7 +12,7 @@ interface ISiteMetadataResult {
 const data: ISiteMetadataResult = {
   siteTitle: 'Timhai Running Page',
   siteUrl: 'https://timhaiz.github.io/running_page/',
-  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+  logo: 'https://www.logosc.cn/uploads/icon/2021/09/16/42bf786b-d617-478f-a36a-a063c3b1c9e2.png',
   description: 'Personal site and blog',
   navLinks: [
 
