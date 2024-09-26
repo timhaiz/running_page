@@ -1,5 +1,6 @@
 import json
 import time
+import os
 from datetime import datetime
 
 import pytz
@@ -114,6 +115,8 @@ def upload_file_to_strava(client, file_name, data_type, force_to_run=True):
                 )
             else:
                 r = client.upload_activity(activity_file=f, data_type=data_type)
+        
         print(
             f"Uploading {data_type} file: {file_name} to strava, upload_id: {r.upload_id}."
         )
+

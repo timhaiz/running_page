@@ -6,6 +6,7 @@ import yaml
 current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
 
+
 OUTPUT_DIR = os.path.join(parent, "activities")
 GPX_FOLDER = os.path.join(parent, "GPX_OUT")
 TCX_FOLDER = os.path.join(parent, "TCX_OUT")
