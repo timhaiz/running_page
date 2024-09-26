@@ -33,8 +33,6 @@ def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
                 else:
                     print(f"{f}已存在，跳过")
 
-
-
     except KeyError as e:
         print("发生错误：", e)
     except Exception as e:
