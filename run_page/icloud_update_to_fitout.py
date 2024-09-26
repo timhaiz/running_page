@@ -5,9 +5,6 @@ import os
 
 # 使用你的 Apple ID 和应用专用密码
 
-from config import ICLOUD_EMAIL
-from config import ICLOUD_PASSWORD
-
 # 认证到 iCloud
 def authenticate_icloud(ICLOUD_EMAIL, ICLOUD_PASSWORD):
     api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
@@ -15,7 +12,7 @@ def authenticate_icloud(ICLOUD_EMAIL, ICLOUD_PASSWORD):
 
     return api
         
-
+ 
 
 
 def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):

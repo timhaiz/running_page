@@ -32,22 +32,26 @@ def get_to_generate_files(last_time):
     return sorted(list(fit_files_dict.keys())), fit_files_dict
 
 if __name__ == "__main__":
-    download_fit()
+    
     if not os.path.exists(FIT_FOLDER):
         os.mkdir(FIT_FOLDER)
-    
     parser = argparse.ArgumentParser()
     parser.add_argument("client_id", help="strava client id")
     parser.add_argument("client_secret", help="strava client secret")
     parser.add_argument("strava_refresh_token", help="strava refresh token")
+    parser.add_argument("icloud_email", help="icloud email")
+    parser.add_argument("icloud_password", help="icloud password")
     parser.add_argument(
         "--all",
         dest="all",
         action="store_true",
         help="if upload to strava all without check last time",
     )
-    
+
     options = parser.parse_args()
+    download_fit(
+        options.icloud_email,options.icloud_password
+        )
     
     print("Need to load all .fit files, maybe take some time")
     last_time = 0
@@ -81,5 +85,5 @@ if __name__ == "__main__":
 
     time.sleep(10)
     run_strava_sync(
-        options.client_id, options.client_secret, options.strava_refresh_token, options.icloud_email, options.icloud_password
+        options.client_id, options.client_secret, options.strava_refresh_token
     )
