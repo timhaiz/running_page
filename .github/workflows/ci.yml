@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements-dev.txt
-          pip install ./pyicloud
+          pip install .
 
       - name: Check formatting (black)
         run: black . --check
