@@ -10,15 +10,12 @@ interface ISiteMetadataResult {
 }
 
 const data: ISiteMetadataResult = {
-  siteTitle: 'Running Page',
-  siteUrl: 'https://yihong.run',
-  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
+  siteTitle: 'Timhai Running Page',
+  siteUrl: 'https://timhaiz.github.io/running_page/',
+  logo: 'https://www.logosc.cn/uploads/icon/2021/09/16/42bf786b-d617-478f-a36a-a063c3b1c9e2.png',
   description: 'Personal site and blog',
   navLinks: [
-    {
-      name: 'Blog',
-      url: 'https://github.com/yihong0618/gitblog',
-    },
+
     {
       name: 'About',
       url: 'https://github.com/yihong0618/running_page/blob/master/README-CN.md',
