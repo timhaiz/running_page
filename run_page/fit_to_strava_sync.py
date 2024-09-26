@@ -47,7 +47,7 @@ if __name__ == "__main__":
         action="store_true",
         help="if upload to strava all without check last time",
     )
-
+ 
     options = parser.parse_args()
     download_fit(
         options.icloud_email,options.icloud_password
