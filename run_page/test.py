@@ -1,6 +1,6 @@
 import os
 def test():
-    sum = 1 + os.getenv('number')
+    sum = 1 + int(os.getenv('number'))
     print(sum)
     
 if __name__ == '__main__':
