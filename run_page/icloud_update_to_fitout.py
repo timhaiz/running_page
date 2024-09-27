@@ -3,18 +3,17 @@ import os
 
 
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
-icloud_emial = os.environ['ICLOUD_EMAIL']
-icloud_password = os.environ['ICLOUD_PASSWORD']
 
-def authenticate_icloud(ICLOUD_EMAIL, ICLOUD_PASSWORD):
-    api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
+
+def authenticate_icloud(icloud_emial, icloud_password):
+    api = PyiCloudService(icloud_emial, icloud_password)
     return api
         
  
 
 
-def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
-    api = authenticate_icloud(ICLOUD_EMAIL, ICLOUD_PASSWORD)
+def download_fit(icloud_emial, icloud_password):
+    api = authenticate_icloud(icloud_emial, icloud_password)
 
     try:
         # 使用 api.drive 来访问 iCloud Drive
