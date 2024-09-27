@@ -8,6 +8,6 @@ def test():
     
 if __name__ == '__main__':
     test()
-
-    sum = 1 + num
+    print(num)
+    sum = 1+ int(num)
     print(sum)
