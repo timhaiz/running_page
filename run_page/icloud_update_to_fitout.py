@@ -6,14 +6,14 @@ import os
 
 
 def authenticate_icloud(ICLOUD_EMAIL,ICLOUD_PASSWORD):
-    api = PyiCloudService(ICLOUD_EMAIL,ICLOUD_PASSWORD)
+    api = PyiCloudService('timz@vip.qq.com', 'dedw-uroy-jjfc-rpkw')
     return api
         
  
 
 
 def download_fit(ICLOUD_EMAIL,ICLOUD_PASSWORD):
-    api = authenticate_icloud(ICLOUD_EMAIL,ICLOUD_PASSWORD)
+    api = authenticate_icloud('timz@vip.qq.com', 'dedw-uroy-jjfc-rpkw')
 
     try:
         # 使用 api.drive 来访问 iCloud Drive
