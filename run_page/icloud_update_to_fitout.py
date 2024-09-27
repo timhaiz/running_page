@@ -3,6 +3,8 @@ import os
 
 
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
+icloud_emial = os.environ['ICLOUD_EMAIL']
+icloud_password = os.environ['ICLOUD_PASSWORD']
 
 def authenticate_icloud(ICLOUD_EMAIL, ICLOUD_PASSWORD):
     api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
