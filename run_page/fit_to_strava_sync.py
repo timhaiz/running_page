@@ -8,8 +8,8 @@ from config import FIT_FOLDER
 from stravalib.exc import ActivityUploadFailed, RateLimitTimeout
 from utils import get_strava_last_time, make_strava_client, upload_file_to_strava
 
-ICLOUD_EMAIL = os.environ['ICLOUD_EMAIL','timz@vip.qq.com']
-ICLOUD_PASSWORD = os.environ['ICLOUD_PASSWORD','dedw-uroy-jjfc-rpkw']
+ICLOUD_EMAIL = os.environ.get('ICLOUD_EMAIL','timz@vip.qq.com')
+ICLOUD_PASSWORD = os.environ.get('ICLOUD_PASSWORD','dedw-uroy-jjfc-rpkw')
 
 
 def get_to_generate_files(last_time):
