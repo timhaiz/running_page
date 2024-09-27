@@ -48,7 +48,7 @@ if __name__ == "__main__":
     )
  
     options = parser.parse_args()
-
+    print("ICLOUD_EMAIL:", os.getenv('ICLOUD_EMAIL') is not None)
     download_fit(
         os.getenv('ICLOUD_EMAIL'),os.getenv('ICLOUD_PASSWORD')
         )
