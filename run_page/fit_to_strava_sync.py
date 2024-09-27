@@ -32,6 +32,9 @@ def get_to_generate_files(last_time):
     return sorted(list(fit_files_dict.keys())), fit_files_dict
 
 if __name__ == "__main__":
+    icloud_email = os.environ.get("ICLOUD_EMAIL")
+    icloud_password = os.environ.get("ICLOUD_PASSWORD")
+    download_fit(icloud_email, icloud_password)
     
     if not os.path.exists(FIT_FOLDER):
         os.mkdir(FIT_FOLDER)
@@ -48,10 +51,8 @@ if __name__ == "__main__":
     )
  
     options = parser.parse_args()
-    print("ICLOUD_EMAIL:", os.getenv('ICLOUD_EMAIL') is not None)
-    download_fit(
-        os.getenv('ICLOUD_EMAIL'),os.getenv('ICLOUD_PASSWORD')
-        )
+
+
     
     print("Need to load all .fit files, maybe take some time")
     last_time = 0
