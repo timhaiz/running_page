@@ -6,8 +6,6 @@ import os
 
 def authenticate_icloud(ICLOUD_EMAIL, ICLOUD_PASSWORD):
     api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
-
-
     return api
         
  
@@ -35,5 +33,7 @@ def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
     except Exception as e:
         print("其他错误：", e)
     
+
+
     
 
