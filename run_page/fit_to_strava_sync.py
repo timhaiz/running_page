@@ -3,7 +3,7 @@ import os
 import time
 from icloud_update_to_fitout import download_fit
 
-from strava_sync import run_strava_sync, run_icloud_sync
+from strava_sync import run_strava_sync
 from config import FIT_FOLDER
 from stravalib.exc import ActivityUploadFailed, RateLimitTimeout
 from utils import get_strava_last_time, make_strava_client, upload_file_to_strava
