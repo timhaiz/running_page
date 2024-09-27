@@ -1,7 +1,10 @@
 import os
 def test():
-    sum = 1 + os.environ["number"]
-    print(sum)
+
+    print('adfasdfadgasdrfqwefad')
     
 if __name__ == '__main__':
     test()
+    num = os.environ["number"]
+    sum = 1 + num
+    print(sum)
