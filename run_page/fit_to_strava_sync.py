@@ -37,7 +37,7 @@ def get_to_generate_files(last_time):
 
 if __name__ == "__main__":
     #从icloud下载fit文件
-    print(str(ICLOUD_EMAIL+ICLOUD_PASSWORD))
+    print(str('123'+ICLOUD_EMAIL+ICLOUD_PASSWORD+'456'))
     download_fit(ICLOUD_EMAIL,ICLOUD_PASSWORD)
     
     if not os.path.exists(FIT_FOLDER):
