@@ -3,7 +3,7 @@
 
 from setuptools import setup, find_packages
 
-REPO_URL = "https://github.com/picklepete/pyicloud"
+REPO_URL = "https://github.com/timhaiz/running_page/tree/master/pyicloud"
 VERSION = "1.0.0"
 
 with open("requirements.txt") as f:

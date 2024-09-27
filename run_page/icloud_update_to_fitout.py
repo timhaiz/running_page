@@ -5,16 +5,17 @@ import os
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
 
 ICLOUD_EMAIL = os.environ.get('ICLOUD_EMAIL', 'timz@vip.qq.com')
-ICLOUD_PASSWORD = os.environ.get('ICLOUD_PASSWORD', 'dedw-uroy-jjfc-rpkw')
+ICLOUD_PASSWORD = os.environ.get('ICLOUD_PASSWORD', 'dedw-uroy-jjfc-rpkw?')
 
 def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
     print(ICLOUD_EMAIL, ICLOUD_PASSWORD)
     api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
-
+    
     try:
         # 使用 api.drive 来访问 iCloud Drive
         files = api.drive['Blackbird'].dir()
         for f in files:
+            print(f)
             if f.endswith(".fit"):
                 base_name = os.path.splitext(f)[0]  
                 fit_out_path = os.path.join("FIT_OUT", f)
@@ -24,7 +25,7 @@ def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
                     with open(fit_out_path, 'wb') as opened_file:
                         opened_file.write(download.raw.read())
 
-
+        print('ok')
     except KeyError as e:
         print("发生错误：", e)
     except Exception as e:
