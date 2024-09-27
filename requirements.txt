@@ -27,5 +27,5 @@ garmin-fit-sdk
 haversine==2.8.0
 garth
 pycryptodome
-git+https://github.com/timhaiz/running_page.git@main#egg=pyicloud
+git+https://github.com/timhaiz/running_page.git@master#egg=pyicloud
 
