@@ -1,5 +1,4 @@
 from pyicloud import PyiCloudService
-import sys
 import os
 
 
@@ -29,9 +28,7 @@ def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
                     download = api.drive['Blackbird'][f].open(stream=True)
                     with open(fit_out_path, 'wb') as opened_file:
                         opened_file.write(download.raw.read())
-                        print(f"{f}已下载")
-                else:
-                    print(f"{f}已存在，跳过")
+
 
     except KeyError as e:
         print("发生错误：", e)
