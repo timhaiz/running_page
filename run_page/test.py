@@ -1,7 +1,7 @@
 import os
 
 
-num ="${{number}}"
+num ="$number"
 def test():
 
     print('adfasdfadgasdrfqwefad')
