@@ -26,7 +26,7 @@ on:
 
 env:
   # please change to your own config.
-  RUN_TYPE: icloud_fit_strava # support strava/nike/garmin/coros/garmin_cn/garmin_sync_cn_global/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/tcx_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon/oppo, Please change the 'pass' it to your own
+  RUN_TYPE: test # support strava/nike/garmin/coros/garmin_cn/garmin_sync_cn_global/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/tcx_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon/oppo, Please change the 'pass' it to your own
   ATHLETE: timhai
   TITLE: Timhai Rides and runs
   MIN_GRID_DISTANCE: 10 # change min distance here
@@ -88,6 +88,13 @@ jobs:
             ${{ env.DATA_CACHE_PREFIX }}-${{ github.sha }}-
             ${{ env.DATA_CACHE_PREFIX }}-
 
+
+      - name: test
+        if: env.RUN_TYPE == 'test'
+        run: |
+          python run_page/test.py ${{ secrets.number }}
+          
+          
       - name: Run sync Nike script
         if: env.RUN_TYPE == 'nike'
         run: |

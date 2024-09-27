@@ -22,6 +22,7 @@ class Generator:
         self.client = stravalib.Client()
         self.session = init_db(db_path)
 
+
         self.client_id = ""
         self.client_secret = ""
         self.refresh_token = ""
