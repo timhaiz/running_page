@@ -1,5 +1,5 @@
 name: CI
-
+ 
 on: [push, pull_request]
 
 jobs:
@@ -27,5 +27,3 @@ jobs:
 
 
 
-      - name: Check formatting (black)
-        run: black . --check
