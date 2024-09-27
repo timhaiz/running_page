@@ -4,10 +4,12 @@ import os
 
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
 
+ICLOUD_EMAIL = os.environ.get('ICLOUD_EMAIL')
+ICLOUD_PASSWORD = os.environ.get('ICLOUD_PASSWORD')
 
-
-def download_fit(ICLOUD_EMAIL,ICLOUD_PASSWORD):
-    api = PyiCloudService(ICLOUD_EMAIL,ICLOUD_PASSWORD)
+def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
+    print(ICLOUD_EMAIL, ICLOUD_PASSWORD)
+    api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
 
     try:
         # 使用 api.drive 来访问 iCloud Drive
@@ -31,4 +33,6 @@ def download_fit(ICLOUD_EMAIL,ICLOUD_PASSWORD):
 
 
     
+if __name__ == "__main__":
+    download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD)
 
