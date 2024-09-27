@@ -92,7 +92,7 @@ jobs:
       - name: test
         if: env.RUN_TYPE == 'test'
         env: 
-          NUMBER: ${{ secrets.number }}
+          NUMBER: ${{ secrets.NUMBER }}
         run: |
           python run_page/test.py
           
