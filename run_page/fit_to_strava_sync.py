@@ -8,6 +8,10 @@ from config import FIT_FOLDER
 from stravalib.exc import ActivityUploadFailed, RateLimitTimeout
 from utils import get_strava_last_time, make_strava_client, upload_file_to_strava
 
+icloud_emial = os.environ['ICLOUD_EMAIL']
+icloud_password = os.environ['ICLOUD_PASSWORD']
+
+
 def get_to_generate_files(last_time):
     """
     Return two values: one dict for upload
@@ -32,6 +36,8 @@ def get_to_generate_files(last_time):
     return sorted(list(fit_files_dict.keys())), fit_files_dict
 
 if __name__ == "__main__":
+    #从icloud下载fit文件
+    download_fit(icloud_emial,icloud_password)
     
     if not os.path.exists(FIT_FOLDER):
         os.mkdir(FIT_FOLDER)
@@ -39,8 +45,7 @@ if __name__ == "__main__":
     parser.add_argument("client_id", help="strava client id")
     parser.add_argument("client_secret", help="strava client secret")
     parser.add_argument("strava_refresh_token", help="strava refresh token")
-    parser.add_argument("iclound_email", help="iclound email")
-    parser.add_argument("iclound_password", help="iclound password")
+
     parser.add_argument(
         "--all",
         dest="all",
@@ -49,12 +54,6 @@ if __name__ == "__main__":
     )
  
     options = parser.parse_args()
-     #从icloud下载fit文件
-    ICLOUD_EMAIL = set_icloud_config(icloud_email, icloud_password)
-    ICLOUD_PASSWORD = 'badsf'
-    download_fit(ICLOUD_EMAIL,ICLOUD_PASSWORD)
-
-    
     print("Need to load all .fit files, maybe take some time")
     last_time = 0
     client = make_strava_client(
