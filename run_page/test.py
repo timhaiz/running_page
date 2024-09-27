@@ -1,7 +1,7 @@
 import os
 
 
-num = os.environ["number"]
+num ="${{number}}"
 def test():
 
     print('adfasdfadgasdrfqwefad')
