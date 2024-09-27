@@ -1,7 +1,7 @@
 import os
 
 
-num = NUMBER
+num = os.environ['NUMBER']
 def test():
 
     print('adfasdfadgasdrfqwefad')
