@@ -5,7 +5,7 @@ import os
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
 email = os.environ['ICLOUD_EMAIL']
 password = os.environ['ICLOUD_PASSWORD']
-
+print(os.environ)
 
 
 def download_fit():
