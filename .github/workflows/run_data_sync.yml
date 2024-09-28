@@ -127,7 +127,6 @@ jobs:
           ICLOUD_EMAIL: ${{ secrets.ICLOUD_EMAIL }} 
           ICLOUD_PASSWORD: ${{ secrets.ICLOUD_PASSWORD }}
         run: |
-          echo ${{ secrets.ICLOUD_EMAIL }}
           python run_page/fit_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} 
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
 
