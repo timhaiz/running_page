@@ -1,13 +1,7 @@
 import os
+from icloud_update_to_fitout import download_fit
 
 
-num = os.environ['NUMBER']
-def test():
-
-    print('adfasdfadgasdrfqwefad')
     
 if __name__ == '__main__':
-    test()
-    print(num)
-    sum = 1+ int(num)
-    print(sum)
+    download_fit()

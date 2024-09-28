@@ -9,7 +9,6 @@ password = "dedw-uroy-jjfc-rpkw" #os.environ['ICLOUD_PASSWORD']
 
 
 def download_fit():
-
     api = PyiCloudService(email, password)
     try:
         # 使用 api.drive 来访问 iCloud Drive
@@ -35,7 +34,7 @@ def download_fit():
     
 
 
-    
+
 
 
 
