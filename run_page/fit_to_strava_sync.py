@@ -8,8 +8,6 @@ from config import FIT_FOLDER
 from stravalib.exc import ActivityUploadFailed, RateLimitTimeout
 from utils import get_strava_last_time, make_strava_client, upload_file_to_strava
 
-emial = os.getenv(ICLOUD_EMAIL) 
-password = os.environ.get(ICLOUD_PASSWORD)
 
 
 
@@ -40,7 +38,7 @@ def get_to_generate_files(last_time):
 
 if __name__ == "__main__":
     #从icloud下载fit文件
-    download_fit(emial, password)
+    download_fit()
     
     if not os.path.exists(FIT_FOLDER):
         os.mkdir(FIT_FOLDER)
