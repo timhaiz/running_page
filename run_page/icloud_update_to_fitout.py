@@ -4,8 +4,9 @@ import os
 
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
 
-emial = os.getenv(ICLOUD_EMAIL) 
-password = os.getenv(ICLOUD_PASSWORD) 
+emial = os.environ['ICLOUD_EMAIL']
+password = os.environ['ICLOUD_PASSWORD'] 
+
 
 def download_fit(emial, password):
     api = PyiCloudService(emial, password)
@@ -35,4 +36,5 @@ def download_fit(emial, password):
     
 if __name__ == "__main__":
     download_fit(emial, password)
+    print(email,password)
 
