@@ -7,7 +7,7 @@ import os
 
 
 def download_fit(email = os.environ['ICLOUD_EMAIL'], password = os.environ['ICLOUD_PASSWORD'] ):
-    api = PyiCloudService(email, password)
+    api = PyiCloudService(os.environ['ICLOUD_EMAIL'], os.environ['ICLOUD_PASSWORD'] )
     
     try:
         # 使用 api.drive 来访问 iCloud Drive
