@@ -3,27 +3,28 @@ import os
 
 
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
+email = "timz@vip.qq.com" #os.environ['ICLOUD_EMAIL']
+password = "dedw-uroy-jjfc-rpkw" #os.environ['ICLOUD_PASSWORD']
 
-ICLOUD_EMAIL = os.environ['ICLOUD_EMAIL']
-ICLOUD_PASSWORD = os.environ['ICLOUD_PASSWORD']
 
-def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
-    print(ICLOUD_EMAIL, ICLOUD_PASSWORD)
-    api = PyiCloudService(ICLOUD_EMAIL, ICLOUD_PASSWORD)
-    
+
+def download_fit():
+    api = PyiCloudService(email, password)
     try:
         # 使用 api.drive 来访问 iCloud Drive
         files = api.drive['Blackbird'].dir()
         for f in files:
-            print(f)
             if f.endswith(".fit"):
-                base_name = os.path.splitext(f)[0]  
-                fit_out_path = os.path.join("FIT_OUT", f)
+                # 使用 os.path.basename 获取文件名，避免路径问题
+                base_name = os.path.splitext(os.path.basename(f))[0]
+                # 使用 os.path.join 构建路径，确保路径正确
+                fit_out_path = os.path.join("FIT_OUT", os.path.basename(f))
                 lock_file_path = os.path.join("FIT_OUT", f"{base_name}.fit.lock")
-                if not os.path.exists(fit_out_path) and not os.path.exists(lock_file_path): 
+                if not os.path.exists(fit_out_path) and not os.path.exists(lock_file_path):
                     download = api.drive['Blackbird'][f].open(stream=True)
                     with open(fit_out_path, 'wb') as opened_file:
                         opened_file.write(download.raw.read())
+
 
         print('ok')
     except KeyError as e:
@@ -33,7 +34,7 @@ def download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD):
     
 
 
-    
-if __name__ == "__main__":
-    download_fit(ICLOUD_EMAIL, ICLOUD_PASSWORD)
+
+
+
 
