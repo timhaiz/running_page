@@ -7,7 +7,7 @@ email = os.environ['ICLOUD_EMAIL']
 password = os.environ['ICLOUD_PASSWORD']
 
 
-def authenticate_icloud(email, password):
+def authenticate_icloud():
     api = PyiCloudService(email, password)
 
 
