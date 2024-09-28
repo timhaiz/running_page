@@ -7,16 +7,10 @@ email = os.environ['ICLOUD_EMAIL']
 password = os.environ['ICLOUD_PASSWORD']
 
 
-def authenticate_icloud():
-    api = PyiCloudService(email, password)
-
-
-    return api
-
 
 def download_fit():
 
-    api = authenticate_icloud()
+    api = PyiCloudService(email, password)
     try:
         # 使用 api.drive 来访问 iCloud Drive
         files = api.drive['Blackbird'].dir()
@@ -42,7 +36,6 @@ def download_fit():
 
 
     
-if __name__ == "__main__":
-    download_fit()
+
 
 
