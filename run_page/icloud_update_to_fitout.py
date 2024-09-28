@@ -16,7 +16,7 @@ def authenticate_icloud():
 
 def download_fit():
 
-    api = authenticate_icloud(email, password)
+    api = authenticate_icloud()
     try:
         # 使用 api.drive 来访问 iCloud Drive
         files = api.drive['Blackbird'].dir()
