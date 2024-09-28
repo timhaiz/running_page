@@ -3,8 +3,8 @@ import os
 
 
 # 使用你的 Apple ID 和应用专用密码,认证到 iCloud
-email = "timz@vip.qq.com" #os.environ['ICLOUD_EMAIL']
-password = "dedw-uroy-jjfc-rpkw" #os.environ['ICLOUD_PASSWORD']
+email = os.environ['ICLOUD_EMAIL']
+password = os.environ['ICLOUD_PASSWORD']
 
 
 
