@@ -6,9 +6,9 @@ import os
 email = "timz@vip.qq.com" #os.environ['ICLOUD_EMAIL']
 password = "dedw-uroy-jjfc-rpkw" #os.environ['ICLOUD_PASSWORD']
 
-
-
 def download_fit():
+    email = os.environ["ICLOUD_EMAIL"]
+    password = os.environ["ICLOUD_PASSWORD"]
     api = PyiCloudService(email, password)
     try:
         # 使用 api.drive 来访问 iCloud Drive
@@ -33,6 +33,8 @@ def download_fit():
         print("其他错误：", e)
     
 
+
+    
 
 
 
