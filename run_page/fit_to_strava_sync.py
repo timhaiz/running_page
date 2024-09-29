@@ -9,10 +9,6 @@ from stravalib.exc import ActivityUploadFailed, RateLimitTimeout
 from utils import get_strava_last_time, make_strava_client, upload_file_to_strava
 
 
-
-
-
-
 def get_to_generate_files(last_time):
     """
     Return two values: one dict for upload
@@ -72,6 +68,7 @@ if __name__ == "__main__":
         fit_file = to_upload_dict.get(i)
         try:
             upload_file_to_strava(client, fit_file, "fit")
+            
         except RateLimitTimeout as e:
             timeout = e.timeout
             print(f"Strava API Rate Limit Timeout. Retry in {timeout} seconds\n")
@@ -83,7 +80,7 @@ if __name__ == "__main__":
         
         # Spider rule
         time.sleep(1)
-        os.rename(fit_file,fit_file+'.lock')
+
 
     time.sleep(10)
     run_strava_sync(

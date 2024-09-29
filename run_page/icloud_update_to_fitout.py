@@ -25,8 +25,6 @@ def download_fit():
                     with open(fit_out_path, 'wb') as opened_file:
                         opened_file.write(download.raw.read())
 
-
-        print('ok')
     except KeyError as e:
         print("发生错误：", e)
     except Exception as e:
