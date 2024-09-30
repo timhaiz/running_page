@@ -16,7 +16,10 @@ def download_fit():
                 base_name = os.path.splitext(os.path.basename(f))[0]
                 fit_out_path = os.path.join("FIT_OUT", os.path.basename(f))
                 lock_file_path = os.path.join("FIT_OUT", f"{base_name}.fit.lock")
-                print('f':f,'fit_out_path':fit_out_path,'lock_file_path':lock_file_path)
+                print("f:",f,
+                      "fit_out_path:",fit_out_path
+                    ,"lock_file_path:",lock_file_path)
+                    
                 if not os.path.exists(fit_out_path) and not os.path.exists(lock_file_path):
                     download = api.drive['Blackbird'][f].open(stream=True)
                     with open(fit_out_path, 'wb') as opened_file:
