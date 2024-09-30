@@ -67,18 +67,17 @@ if __name__ == "__main__":
     for i in to_upload_time_list:
         fit_file = to_upload_dict.get(i)
         try:
-            if upload_file_to_strava(client, fit_file, "fit"):
-                new_name = os.rename(fit_file, fit_file + ".lock")
-                print(new_name)
+            upload_file_to_strava(client, fit_file, "fit")
+
             
         except RateLimitTimeout as e:
             timeout = e.timeout
             print(f"Strava API Rate Limit Timeout. Retry in {timeout} seconds\n")
             time.sleep(timeout)
             # Try previous upload again
-            if upload_file_to_strava(client, fit_file, "fit"):
-                new_name = os.rename(fit_file, fit_file + ".lock")
-                print(new_name)
+            upload_file_to_strava(client, fit_file, "fit")
+
+
         except ActivityUploadFailed as e:
             print(f"Upload failed with error: {str(e)}")
         
