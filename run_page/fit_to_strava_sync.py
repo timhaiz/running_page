@@ -69,7 +69,7 @@ if __name__ == "__main__":
         try:
             upload_file_to_strava(client, fit_file, "fit")
 
-            if os.renames(fit_file, fit_file + ".lock"):
+            if os.path.rename(fit_file, fit_file + ".lock"):
                 print(f"{fit_file} rename success")
             else:
                 print(f"{fit_file} rename failed")
