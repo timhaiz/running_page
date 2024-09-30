@@ -68,6 +68,7 @@ if __name__ == "__main__":
         fit_file = to_upload_dict.get(i)
         try:
             upload_file_to_strava(client, fit_file, "fit")
+            print(fit_file, "upload success")
 
             
         except RateLimitTimeout as e:
