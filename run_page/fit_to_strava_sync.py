@@ -68,8 +68,7 @@ if __name__ == "__main__":
         fit_file = to_upload_dict.get(i)
         try:
             upload_file_to_strava(client, fit_file, "fit")
-            os.rename(fit_file, fit_file.join(".lock"))
-            print(f"{fit_file} rename success")
+            
 
 
 
