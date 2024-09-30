@@ -116,7 +116,7 @@ def upload_file_to_strava(client, file_name, data_type, force_to_run=True):
                 r = client.upload_activity(activity_file=f, data_type=data_type)
         
         
-        os.rename(file_name, file_name.join(".lock"))
+        os.rename(file_name, file_name + (".lock"))
         print(f"{file_name} rename success")
         print(
             f"Uploading {data_type} file: {file_name} to strava, upload_id: {r.upload_id}."
