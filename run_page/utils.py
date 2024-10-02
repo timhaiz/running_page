@@ -119,7 +119,7 @@ def upload_file_to_strava(client, file_name, data_type, force_to_run=True):
             f"Uploading {data_type} file: {file_name} to strava, upload_id: {r.upload_id}."
         )
 
-def upload_fit_to_strava_with_activity_id(client, file_name, data_type, force_to_run=True):
+def upload_fit_to_strava(client, file_name, data_type, force_to_run=True):
     with open(file_name, "rb") as f:
         try:
             if force_to_run:
