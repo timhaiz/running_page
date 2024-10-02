@@ -6,7 +6,7 @@ from icloud_update_to_fitout import download_fit
 from strava_sync import run_strava_sync
 from config import FIT_FOLDER
 from stravalib.exc import ActivityUploadFailed, RateLimitTimeout
-from utils import get_strava_last_time, make_strava_client, upload_file_to_strava
+from utils import get_strava_last_time, make_strava_client, upload_fit_to_strava
 
 
 def get_to_generate_files(last_time):
@@ -67,18 +67,15 @@ if __name__ == "__main__":
     for i in to_upload_time_list:
         fit_file = to_upload_dict.get(i)
         try:
-            upload_file_to_strava(client, fit_file, "fit")
+            upload_fit_to_strava(client, fit_file, "fit")
             
-
-
-
             
         except RateLimitTimeout as e:
             timeout = e.timeout
             print(f"Strava API Rate Limit Timeout. Retry in {timeout} seconds\n")
             time.sleep(timeout)
             # Try previous upload again
-            upload_file_to_strava(client, fit_file, "fit")
+            upload_fit_to_strava(client, fit_file, "fit")
 
 
         except ActivityUploadFailed as e:
